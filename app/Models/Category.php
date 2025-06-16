@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Category extends Model
+{
+    use HasFactory;
+
+    // علاقة الـ Category مع العطور (Perfumes)
+    public function perfumes()
+    {
+        return $this->hasMany(Perfume::class);
+    }
+}
