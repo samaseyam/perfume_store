@@ -94,16 +94,14 @@ return [
     | are secure. You should do this prior to deploying the application.
     |
     */
-
-    'cipher' => 'AES-256-CBC',
+'cipher' => 'AES-256-CBC',
 
     'key' => env('APP_KEY'),
 
-    'previous_keys' => [
-        ...array_filter(
-            explode(',', env('APP_PREVIOUS_KEYS', ''))
-        ),
-    ],
+    // ✅ تم تعديل هذا السطر ليعمل على PHP 7 أو 8
+    'previous_keys' => array_filter(
+        explode(',', env('APP_PREVIOUS_KEYS', ''))
+    ),
 
     /*
     |--------------------------------------------------------------------------
