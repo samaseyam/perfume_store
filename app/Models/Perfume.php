@@ -14,7 +14,7 @@ class Perfume extends Model
         'description',
         'price',
         'category_id',
-        'image',
+        'image_url',
     ];
 
     public function category()

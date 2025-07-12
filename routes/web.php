@@ -7,6 +7,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
+use App\Http\Controllers\HomeController;
+
 
 // الصفحة الرئيسية تعرض قائمة العطور مع بياناتها
 Route::get('/', [PerfumeController::class, 'index'])->name('home');
@@ -27,7 +29,11 @@ Route::middleware('auth')->group(function () {
     Route::resource('users', UserController::class)->names('users');
     Route::resource('orders', OrderController::class)->names('orders');
     Route::resource('order_items', OrderItemController::class)->names('order_items');
+    Route::get('/home', [HomeController::class, 'index']);
+
 });
+
+
 
 // تضمين ملفات ال   مصادقة الجاهزة
 require __DIR__.'/auth.php';
