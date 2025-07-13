@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-
+use App\Models\OrderItem;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,7 +12,8 @@ class OrderItemController extends Controller
      */
     public function index()
     {
-        //
+        
+            return response()->json(OrderItem::all());
     }
 
     /**
